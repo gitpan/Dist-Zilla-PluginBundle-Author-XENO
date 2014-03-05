@@ -3,7 +3,7 @@ use 5.008;
 use strict;
 use warnings;
 
-our $VERSION = '0.001000'; # VERSION
+our $VERSION = '0.001001'; # VERSION
 
 use Moose;
 with qw(
@@ -23,7 +23,11 @@ sub configure {
 	my @plugins = (
 		[ PruneFiles => {
 			filenames => [ qw( dist.ini weaver.ini ) ],
-		}], qw(
+		}, ],
+		[ 'Git::NextVersion' => {
+			version_regexp => '^(.+)$',
+			first_version  => 0.001000,
+		}, ], qw(
 		AutoPrereqs
 		ReadmeFromPod
 		OurPkgVersion
@@ -42,10 +46,7 @@ sub configure {
 		Test::Perl::Critic
 
 		ContributorsFromGit
-	));
 
-	if ( $ENV{RELEASE_TESTING} ) {
-		push @plugins, (qw(
 		Test::UnusedVars
 		Test::CPAN::Meta::JSON
 		Test::DistManifest
@@ -53,17 +54,16 @@ sub configure {
 		Test::CPAN::Changes
 		Test::MinimumVersion
 
-		Git::Remote::Check
 		CheckChangesHasContent
-		));
+		Git::Remote::Check
+	));
 
-		push @plugins, (
-			[ 'InstallRelease' => { install_command => "cpanm ." } ],
-		) if $self->install;
+	push @plugins, (
+		[ 'InstallRelease' => { install_command => "cpanm ." } ],
+	) if $self->install;
 
 # must be last
-		push @plugins, ('Clean'),
-	}
+	push @plugins, ('Clean'),
 
 	$self->add_plugins( @plugins );
 	return;
@@ -85,7 +85,7 @@ Dist::Zilla::PluginBundle::Author::XENO - Author Bundle for Caleb Cushing
 
 =head1 VERSION
 
-version 0.001000
+version 0.001001
 
 =head1 SYNOPSIS
 
