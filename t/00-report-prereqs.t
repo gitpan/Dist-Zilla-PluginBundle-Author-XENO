@@ -59,13 +59,12 @@ my $static_prereqs = do { my $x = {
        'runtime' => {
                       'requires' => {
                                       'Dist::Zilla' => '5',
+                                      'Dist::Zilla::Plugin::AutoMetaResources' => '0',
                                       'Dist::Zilla::Plugin::AutoPrereqs' => '0',
                                       'Dist::Zilla::Plugin::CheckChangesHasContent' => '0',
-                                      'Dist::Zilla::Plugin::Clean' => '0',
                                       'Dist::Zilla::Plugin::ContributorsFromGit' => '0',
                                       'Dist::Zilla::Plugin::Git::NextVersion' => '0',
                                       'Dist::Zilla::Plugin::Git::Remote::Check' => '0',
-                                      'Dist::Zilla::Plugin::InstallRelease' => '0',
                                       'Dist::Zilla::Plugin::MetaJSON' => '0',
                                       'Dist::Zilla::Plugin::MetaProvides::Package' => '0',
                                       'Dist::Zilla::Plugin::OurPkgVersion' => '0',

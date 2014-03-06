@@ -3,7 +3,7 @@ use 5.008;
 use strict;
 use warnings;
 
-our $VERSION = '0.001001'; # VERSION
+our $VERSION = '0.001002'; # VERSION
 
 use Moose;
 with qw(
@@ -21,12 +21,23 @@ sub configure {
 	my $self = shift;
 
 	my @plugins = (
+		[ NextRelease => {
+			format => '%-9v %{yyyy-MM-dd}d',
+		}, ],
+		[ MetaNoIndex => {
+			file => 'perlcritic.rc',
+		}, ],
 		[ PruneFiles => {
 			filenames => [ qw( dist.ini weaver.ini ) ],
 		}, ],
 		[ 'Git::NextVersion' => {
 			version_regexp => '^(.+)$',
 			first_version  => 0.001000,
+		}, ],
+		[ AutoMetaResources => {
+			'homepage' => 'https://metacpan.org/dist/%{dist}',
+			'bugtracker.github' => 'user:xenoterracide',
+			'repository.github' => 'user:xenoterracide',
 		}, ], qw(
 		AutoPrereqs
 		ReadmeFromPod
@@ -85,7 +96,7 @@ Dist::Zilla::PluginBundle::Author::XENO - Author Bundle for Caleb Cushing
 
 =head1 VERSION
 
-version 0.001001
+version 0.001002
 
 =head1 SYNOPSIS
 

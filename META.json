@@ -4,12 +4,12 @@
       "Caleb Cushing <xenoterracide@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.013, CPAN::Meta::Converter version 2.140630",
+   "generated_by" : "Dist::Zilla version 5.013, CPAN::Meta::Converter version 2.140640",
    "license" : [
       "artistic_2"
    ],
    "meta-spec" : {
-      "url" : "https://metacpan.org/pod/CPAN::Meta::Spec",
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
    },
    "name" : "Dist-Zilla-PluginBundle-Author-XENO",
@@ -35,13 +35,12 @@
       "runtime" : {
          "requires" : {
             "Dist::Zilla" : "5",
+            "Dist::Zilla::Plugin::AutoMetaResources" : "0",
             "Dist::Zilla::Plugin::AutoPrereqs" : "0",
             "Dist::Zilla::Plugin::CheckChangesHasContent" : "0",
-            "Dist::Zilla::Plugin::Clean" : "0",
             "Dist::Zilla::Plugin::ContributorsFromGit" : "0",
             "Dist::Zilla::Plugin::Git::NextVersion" : "0",
             "Dist::Zilla::Plugin::Git::Remote::Check" : "0",
-            "Dist::Zilla::Plugin::InstallRelease" : "0",
             "Dist::Zilla::Plugin::MetaJSON" : "0",
             "Dist::Zilla::Plugin::MetaProvides::Package" : "0",
             "Dist::Zilla::Plugin::OurPkgVersion" : "0",
@@ -91,7 +90,7 @@
    "provides" : {
       "Dist::Zilla::PluginBundle::Author::XENO" : {
          "file" : "lib/Dist/Zilla/PluginBundle/Author/XENO.pm",
-         "version" : "0.001001"
+         "version" : "0.001002"
       }
    },
    "release_status" : "stable",
@@ -106,6 +105,6 @@
          "web" : "https://github.com/xenoterracide/dist-zilla-pluginbundle-author-xeno"
       }
    },
-   "version" : "0.001001"
+   "version" : "0.001002"
 }
 

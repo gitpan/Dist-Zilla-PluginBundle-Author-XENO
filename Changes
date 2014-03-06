@@ -1,5 +1,10 @@
 Revision history for Dist-Zilla-PluginBundle-Author-XENO
 
+0.001002  2014-03-05
+	- NextRelease
+	- MetaNoIndex
+	- AutoMetaResources
+
 0.001001  2014-03-04
 	- don't use RELEASE_TESTING, dzil is inconsistent with application timing
 	- add Git::NextVersion
